@@ -1,0 +1,13 @@
+Power Query Steps (Simulação)
+
+1. Importar tabelas: Vendas, Produtos, Clientes, Regiões
+2. Corrigir tipos de dados:
+   - Data → tipo Data
+   - Quantidade, Preço Unitário, Custo Unitário → tipo Número Decimal
+3. Criar coluna Receita = Quantidade * Preço Unitário
+4. Criar coluna Custo = Quantidade * Custo Unitário
+5. Criar coluna Lucro = Receita - Custo
+6. Mesclar tabelas com base em IDs (Produto, Cliente, Região)
+7. Remover colunas desnecessárias (Custo Unitário duplicado)
+8. Filtrar valores nulos e remover linhas duplicadas
+9. Exportar tabela final "vw_vendas_lucros" para análise

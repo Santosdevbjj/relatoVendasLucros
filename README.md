@@ -1,4 +1,4 @@
-## 🧭 Relatório de Vendas e Lucros — Projeto Data Analytics (CDS)
+## 🧭 Relatório de Vendas e Lucros — Projeto Data Analytics
 
 Foco: Business Intelligence • Data Analytics • Engenharia de Dados
 Autor: Sérgio Santos

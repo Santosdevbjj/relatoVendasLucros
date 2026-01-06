@@ -11,7 +11,7 @@
 ---
 
 
-# 🧭 Relatório de Vendas e Lucros — Projeto Data Analytics com Power BI (Simulado via Python)
+# 🧭 Relatório de Vendas e Lucros — Projeto Data Analytics com Power BI (Simulado via Python) 
 
 ![Mockup do Dashboard](assets/mockup_dashboard.png)
 

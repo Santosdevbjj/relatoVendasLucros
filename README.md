@@ -343,7 +343,7 @@ notebooks/exploracao_estatistica.ipynb
 
 ---
 
-## 🧠 Conclusã:
+## 🧠 Conclusão:
 
 Este projeto demonstra como Data Analytics aplicado ao negócio reduz incertezas, direciona investimentos e melhora resultados financeiros — mesmo sem o uso de ferramentas proprietárias.
 

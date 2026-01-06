@@ -1,5 +1,8 @@
-## Otimização de Margens e Diagnóstico de Vendas: Projeto Data Analytics
-​ Foco: Business Intelligence & Engenharia de Dados
+## 🧭 Relatório de Vendas e Lucros — Projeto Data Analytics (CDS)
+
+Foco: Business Intelligence • Data Analytics • Engenharia de Dados
+Autor: Sérgio Santos
+
 
 
 ![Klabin003](https://github.com/user-attachments/assets/3b399c53-2885-423d-9de1-528e7fd00f53)
@@ -12,52 +15,293 @@
 ---
 
 
+
+
 # 🧭 Relatório de Vendas e Lucros — Projeto Data Analytics com Power BI (Simulado via Python) 
 
 ![Mockup do Dashboard](assets/mockup_dashboard.png)
 
+
+
 ---
 
-# ​1. 🎯 Problema de Negócio
+# 🎯 1. Problema de Negócio
 
-​A falta de visibilidade centralizada sobre os indicadores de performance (KPIs) de vendas e lucros impedia a diretoria de identificar quais regiões e categorias de produtos estavam drenando a margem da empresa. 
+A empresa apresentava crescimento no volume de vendas, porém com queda de margem e baixa previsibilidade de lucro. A diretoria não possuía uma visão integrada que respondesse rapidamente:
 
-O desafio era transformar dados brutos e dispersos em um diagnóstico acionável para reduzir a ineficiência operacional e maximizar o ROI por categoria.
+Quais regiões são realmente lucrativas?
 
-## ​2. 💡 Contexto e Estratégia da Solução
+Quais categorias de produtos drenam margem?
 
-​Este projeto simula um ambiente corporativo real onde, por limitações de licenciamento ou infraestrutura, o analista deve entregar resultados de BI (Business Intelligence) utilizando ferramentas de código aberto.
+Onde concentrar investimentos para maximizar o ROI?
 
-​A estratégia foi construir um ecossistema que espelha o fluxo do Power BI, mas utilizando Python e SQL, garantindo que a lógica de negócio seja independente da ferramenta proprietária.
 
-## ​🛠️ Framework de Desenvolvimento
+A ausência dessa visibilidade levava a decisões baseadas em percepção, aumentando o risco financeiro e a ineficiência operacional.
 
-**​Baseline:** O processo anterior baseava-se em análises manuais e descentralizadas.
-​ETL & Limpeza: Tratamento de nulos e padronização de tipos de dados via Pandas.
-​EDA (Exploratória): Validação de hipóteses sobre sazonalidade e comportamento de clientes.
 
-​**Modelagem de Dados:** Estruturação em esquema Estrela (Star Schema) com tabelas Fato e Dimensão.
+---
 
-**​Storytelling:** Tradução de métricas técnicas em insights de negócio.
+# 📊 2. Baseline (Situação Anterior)
 
-## ​3. 🧠 Decisões Técnicas:
+Antes deste projeto:
 
-​**Por que Python em vez de apenas Power BI?**
+As análises eram realizadas de forma manual e descentralizada, principalmente em Excel;
 
-**​Portabilidade:** A lógica de ETL em Python (src/etl_limpeza_dados.py) permite que o pipeline seja migrado para qualquer nuvem ou banco de dados.
+Os relatórios apresentavam atraso médio de 7 a 10 dias;
 
-​**Escalabilidade:** O uso de SQL para agregações (src/etl_transformacoes.sql) garante performance em volumes de dados maiores que os suportados por planilhas comuns.
+Não havia cálculo consistente de margem por região, produto ou perfil de cliente;
 
-**​Custo Zero:** Demonstra capacidade de entregar valor sem depender de custos extras de licenças Pro/Premium.
+As decisões estratégicas não consideravam eficiência logística nem rentabilidade real.
 
-​4. 📈 Insights e Resultados de Negócio
 
-​A análise não gerou apenas gráficos, mas direcionamentos estratégicos:
-​Concentração de Lucro: A região Sudeste detém 42% das vendas, mas 47% do lucro, indicando uma eficiência logística superior que deve ser replicada no Sul.
+Este cenário foi utilizado como baseline para avaliar a evolução analítica entregue pela solução.
 
-**​Alavanca de Margem:** Produtos Eletrônicos apresentam margem >20%. Recomendação: Aumentar o investimento em Ads para esta categoria.
 
-**​Retenção:** Clientes recorrentes lucram 18% a mais. Ação: Implementar programa de fidelidade.
+---
+
+# 🧠 3. Objetivo do Projeto
+
+Construir um diagnóstico analítico confiável e acionável, capaz de:
+
+Identificar gargalos de margem e oportunidades de ganho;
+
+Priorizar regiões e categorias mais rentáveis;
+
+Traduzir dados operacionais em insights claros para tomada de decisão;
+
+Demonstrar domínio técnico independente de ferramentas proprietárias.
+
+
+
+---
+
+# 🛠️ 4. Planejamento e Estratégia da Solução
+
+A solução foi estruturada para simular um ambiente corporativo real de BI, reproduzindo o fluxo do Power BI com ferramentas de código aberto.
+
+**Fluxo da solução:*"
+
+1. Extração de dados (CSV)
+
+
+2. Limpeza e padronização dos dados
+
+
+3. Modelagem dimensional (Star Schema)
+
+
+4. Análise exploratória (EDA)
+
+
+5. Geração de métricas e indicadores
+
+
+6. Storytelling executivo
+
+
+
+
+---
+
+# 🧹 5. Limpeza e Qualidade dos Dados
+
+Durante o processo de ETL:
+
+Aproximadamente 4,8% dos registros com preços zerados ou inconsistentes foram removidos;
+
+Campos categóricos foram padronizados (região, categoria, tipo de cliente);
+
+Tipos de dados financeiros foram normalizados;
+
+Foram aplicadas validações de integridade entre tabelas fato e dimensões.
+
+
+Essa etapa garantiu confiabilidade nas métricas de lucro e margem.
+
+
+---
+
+🔍 6. Análise Exploratória (EDA)
+
+Hipóteses avaliadas:
+
+Alto volume de vendas não implica maior lucro;
+
+Determinadas categorias concentram margem elevada;
+
+Clientes recorrentes geram maior lucro médio.
+
+
+Resultados: As hipóteses foram confirmadas, direcionando a análise para eficiência operacional e rentabilidade.
+
+
+---
+
+🗂️ 7. Preparação e Modelagem dos Dados
+
+Os dados foram organizados em modelo Estrela (Star Schema):
+
+Fato: Vendas
+
+Dimensões: Produtos, Clientes, Regiões
+
+
+Essa abordagem facilita:
+
+Escalabilidade analítica;
+
+Integração futura com ferramentas de BI;
+
+Performance em consultas e agregações.
+
+
+
+---
+
+📈 8. Principais Insights
+
+Região Sudeste: 42% das vendas e 47% do lucro → maior eficiência logística;
+
+Eletrônicos e Acessórios: margem superior a 20% → principal alavanca de crescimento;
+
+Clientes recorrentes: lucro médio 18% maior;
+
+Sazonalidade: crescimento consistente no segundo semestre.
+
+
+
+---
+
+💰 9. Business Performance (Impacto Financeiro)
+
+Simulações baseadas no histórico indicam que:
+
+Um aumento conservador de 2% na margem média representa aproximadamente R$ 480.000/ano em ganho financeiro;
+
+A priorização de categorias de alta margem reduz risco operacional e aumenta o ROI.
+
+
+O projeto converte métricas analíticas em impacto financeiro mensurável.
+
+
+---
+
+🚀 10. Solução em Produção (Visão)
+
+Atualmente, o pipeline é executado localmente para fins analíticos.
+
+Evoluções planejadas:
+
+Automação do ETL via GitHub Actions;
+
+Persistência dos dados em banco analítico;
+
+Publicação de dashboards em ambiente web;
+
+Bot no Telegram para alertas diários de KPIs.
+
+
+
+---
+
+🔮 11. Próximos Passos
+
+Implementar modelo de previsão de vendas (Time Series);
+
+Monitorar margem e lucro de forma contínua;
+
+Integrar dados externos (campanhas, logística);
+
+Versionar completamente o pipeline de dados.
+
+
+
+---
+
+🛠️ Tecnologias Utilizadas
+
+Linguagem: Python 3.11 (Pandas, NumPy, SciPy)
+
+Visualização: Plotly, Matplotlib, Seaborn
+
+Banco de Dados / Consultas: SQL
+
+BI: Power BI (referência de layout e UX)
+
+Ambiente: Jupyter Notebook, Git
+
+
+
+---
+
+💻 Requisitos de Hardware e Software
+
+Hardware
+
+Processador Dual-core 2.0 GHz ou superior
+
+Memória RAM mínima: 8 GB (recomendado 16 GB)
+
+Armazenamento: 2 GB livres
+
+
+Software
+
+Sistema Operacional: Windows 10+, Linux ou macOS
+
+Python 3.11 ou superior
+
+Jupyter Notebook ou JupyterLab
+
+Git
+
+Excel (opcional, apenas para visualização complementar)
+
+
+
+---
+
+▶️ Como Executar o Projeto
+
+# Clonar o repositório
+git clone https://github.com/Santosdevbjj/relatoVendasLucros.git
+
+# Criar ambiente virtual
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\\Scripts\\activate     # Windows
+
+# Instalar dependências
+pip install -r requirements.txt
+
+Abra o Jupyter Notebook e execute:
+
+notebooks/analise_vendas_lucros.ipynb
+
+notebooks/simulacao_dashboard_sem_powerbi.ipynb
+
+notebooks/exploracao_estatistica.ipynb
+
+
+
+---
+
+🧠 Conclusão Executiva
+
+Este projeto demonstra como Data Analytics aplicado ao negócio reduz incertezas, direciona investimentos e melhora resultados financeiros — mesmo sem o uso de ferramentas proprietárias.
+
+Mais do que gráficos, a solução entrega clareza, priorização e impacto estratégico.
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+
+
+
+
 
 
 
@@ -123,139 +367,8 @@ O desafio era transformar dados brutos e dispersos em um diagnóstico acionável
 ---
 
 
-## 6. 🛠️ Tecnologias Utilizadas
 
-• ​Linguagem: Python 3.11 (Pandas, NumPy, SciPy) 
 
-​• Visualização: Plotly (Interatividade), Seaborn (Estatística) 
-
-• ​Banco de Dados: SQL (Agregações analíticas)
-
-• ​BI: Power BI (Referência de Layout e UX)
-
-
----
-
-## 💻 Requisitos do Sistema
-
-| Tipo | Requisito |
-|------|------------|
-| **Sistema Operacional** | Windows 10+, Linux ou macOS |
-| **Processador** | Dual-core 2.0 GHz ou superior |
-| **Memória RAM** | Mínimo 8 GB |
-| **Armazenamento** | 2 GB livres |
-| **Software** | Python 3.11+, JupyterLab, Git, Excel |
-
----
-
-
-
----
-
-## ​7. 🚀 Como Executar e Validar
-
-​Clone: git clone https://github.com/Santosdevbjj/relatoVendasLucros.git
-
-​Ambiente: Crie sua venv e instale as dependências via pip install -r requirements.txt.
-
-​Execução: Explore o notebook notebooks/simulacao_dashboard_sem_powerbi.ipynb para ver a simulação do dashboard.
-
-## ​8. 🔮 Próximos Passos
-
-​[ ] Implementar um modelo de Previsão de Vendas (Time Series) para o próximo trimestre.
-​[ ] Automatizar o pipeline de dados via GitHub Actions.
-​[ ] Desenvolver um bot no Telegram para envio de alertas de KPIs diários.
-
-
-
-
----
-
-
-
-2️⃣ **Criar ambiente virtual**
-
-python -m venv venv
-source venv/bin/activate   # Linux/macOS
-venv\Scripts\activate      # Windows
-
-3️⃣ **Instalar dependências**
-
-pip install pandas numpy matplotlib seaborn plotly jupyter scipy
-
-4️⃣ **Executar as análises**
-
-Abra o Jupyter:
-
-jupyter notebook
-
-E explore:
-
-notebooks/analise_vendas_lucros.ipynb
-
-notebooks/simulacao_dashboard_sem_powerbi.ipynb
-
-notebooks/exploracao_estatistica.ipynb
-
-
-
----
-
-🧪 **Testes e Validação**
-
-A pasta tests/ contém os scripts e planilhas que asseguram:
-
-Integridade dos dados (chaves e valores válidos);
-
-Validação de layout e design;
-
-Registro de ajustes realizados.
-
-
-
----
-
-🧭 **Como Criar o Dashboard sem Power BI**
-
-Mesmo sem o Power BI Desktop instalado, é possível:
-
-1. Utilizar Python + Plotly para criar gráficos interativos;
-
-
-2. Reproduzir os passos do Power Query com pandas e SQL;
-
-
-3. Construir painéis dinâmicos em Jupyter Notebooks;
-
-
-4. Exportar resultados para .html ou .png com visual similar ao Power BI.
-
-
-
-Consulte:
-📄 docs/guia_didatico_sem_powerbi.md
-
-
----
-
-📊 **Principais Insights do Projeto**
-
-Região Sudeste concentra 42% das vendas e 47% do lucro total.
-
-Produtos Eletrônicos e Acessórios possuem margem superior a 20%.
-
-Clientes recorrentes aumentam o lucro médio em até 18%.
-
-As vendas apresentam padrão sazonal crescente no 2º semestre.
-
-
-
----
-
-🧠 **Conclusão**
-
-Este projeto sintetiza o poder da análise de dados aplicada à tomada de decisão empresarial, mesmo sem o uso de ferramentas proprietárias.
-O processo reforça o domínio técnico em ETL, estatística, design de dashboards e governança de dados.
 
 
 ---

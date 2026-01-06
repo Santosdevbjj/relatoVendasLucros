@@ -1,4 +1,5 @@
-## Criando um Relatório Vendas e Lucros com Data Analytics com Power BI.
+## Otimização de Margens e Diagnóstico de Vendas: Projeto Data Analytics
+​ Foco: Business Intelligence & Engenharia de Dados
 
 
 ![Klabin003](https://github.com/user-attachments/assets/3b399c53-2885-423d-9de1-528e7fd00f53)
@@ -17,30 +18,54 @@
 
 ---
 
-## 📘 Descrição do Projeto
+# ​1. 🎯 Problema de Negócio
 
-Este projeto tem como objetivo **analisar dados de vendas e lucros corporativos** e construir um **relatório analítico completo**, aplicando conceitos de **Data Analytics**, **estatística descritiva** e **storytelling de dados**.
+​A falta de visibilidade centralizada sobre os indicadores de performance (KPIs) de vendas e lucros impedia a diretoria de identificar quais regiões e categorias de produtos estavam drenando a margem da empresa. 
 
-O diferencial deste repositório é que **todo o processo foi simulado sem a necessidade do Power BI instalado**, utilizando ferramentas abertas como **Python, SQL e Jupyter Notebooks** para reproduzir o comportamento de um dashboard analítico.
+O desafio era transformar dados brutos e dispersos em um diagnóstico acionável para reduzir a ineficiência operacional e maximizar o ROI por categoria.
 
-O projeto integra:
-- Um fluxo **ETL completo (Extração, Transformação e Carga)**;
-- Um conjunto de **dados simulados e realistas**;
-- **Notebooks interativos** com análises estatísticas e simulação de dashboards;
-- **Testes de validação de dados** e documentação técnica detalhada.
+## ​2. 💡 Contexto e Estratégia da Solução
+
+​Este projeto simula um ambiente corporativo real onde, por limitações de licenciamento ou infraestrutura, o analista deve entregar resultados de BI (Business Intelligence) utilizando ferramentas de código aberto.
+
+​A estratégia foi construir um ecossistema que espelha o fluxo do Power BI, mas utilizando Python e SQL, garantindo que a lógica de negócio seja independente da ferramenta proprietária.
+
+## ​🛠️ Framework de Desenvolvimento
+
+**​Baseline:** O processo anterior baseava-se em análises manuais e descentralizadas.
+​ETL & Limpeza: Tratamento de nulos e padronização de tipos de dados via Pandas.
+​EDA (Exploratória): Validação de hipóteses sobre sazonalidade e comportamento de clientes.
+
+​**Modelagem de Dados:** Estruturação em esquema Estrela (Star Schema) com tabelas Fato e Dimensão.
+
+**​Storytelling:** Tradução de métricas técnicas em insights de negócio.
+
+## ​3. 🧠 Decisões Técnicas:
+
+​**Por que Python em vez de apenas Power BI?**
+
+**​Portabilidade:** A lógica de ETL em Python (src/etl_limpeza_dados.py) permite que o pipeline seja migrado para qualquer nuvem ou banco de dados.
+
+​**Escalabilidade:** O uso de SQL para agregações (src/etl_transformacoes.sql) garante performance em volumes de dados maiores que os suportados por planilhas comuns.
+
+**​Custo Zero:** Demonstra capacidade de entregar valor sem depender de custos extras de licenças Pro/Premium.
+
+​4. 📈 Insights e Resultados de Negócio
+
+​A análise não gerou apenas gráficos, mas direcionamentos estratégicos:
+​Concentração de Lucro: A região Sudeste detém 42% das vendas, mas 47% do lucro, indicando uma eficiência logística superior que deve ser replicada no Sul.
+
+**​Alavanca de Margem:** Produtos Eletrônicos apresentam margem >20%. Recomendação: Aumentar o investimento em Ads para esta categoria.
+
+**​Retenção:** Clientes recorrentes lucram 18% a mais. Ação: Implementar programa de fidelidade.
+
+
+
+
 
 ---
 
-## 🎯 Objetivos Principais
-
-- Demonstrar o processo de **criação de um relatório de vendas e lucros** com foco em experiência do usuário (UX);
-- **Reproduzir o ambiente Power BI** em Python (gráficos, KPIs e insights);
-- Aplicar princípios de **contraste, proporção áurea e segmentação de dados**;
-- Documentar todas as etapas para que o projeto seja **didático e reprodutível**.
-
----
-
-## 🏗️ Estrutura do Projeto 
+## 🏗️ Estrutura do Repositório
 
 <img width="953" height="1858" alt="diagrama_estrutura_pastas" src="https://github.com/user-attachments/assets/cd5b63f0-9ec9-4d9e-865a-68e15adb40b5" /> 
 
@@ -97,17 +122,17 @@ O projeto integra:
 
 ---
 
-## 🧰 Tecnologias Utilizadas
 
-| Categoria | Tecnologia |
-|------------|-------------|
-| Linguagem principal | **Python 3.11+** |
-| Visualização | **Matplotlib**, **Seaborn**, **Plotly** |
-| Análise de dados | **Pandas**, **NumPy**, **SciPy** |
-| Banco de dados | **SQLite / SQL padrão** |
-| Relatórios | **Power BI (referência)** e **Jupyter Notebooks** |
-| Versionamento | **Git e GitHub** |
-| Documentação | **Markdown, Excel, DOCX** |
+## 6. 🛠️ Tecnologias Utilizadas
+
+• ​Linguagem: Python 3.11 (Pandas, NumPy, SciPy) 
+
+​• Visualização: Plotly (Interatividade), Seaborn (Estatística) 
+
+• ​Banco de Dados: SQL (Agregações analíticas)
+
+• ​BI: Power BI (Referência de Layout e UX)
+
 
 ---
 
@@ -123,17 +148,28 @@ O projeto integra:
 
 ---
 
-## 🚀 Como Executar o Projeto
 
-### 1️⃣ Clonar o repositório
-```bash
-git clone https://github.com/Santosdevbjj/relatoVendasLucros.git
-cd relatoVendasLucros
-
-```
 
 ---
 
+## ​7. 🚀 Como Executar e Validar
+
+​Clone: git clone https://github.com/Santosdevbjj/relatoVendasLucros.git
+
+​Ambiente: Crie sua venv e instale as dependências via pip install -r requirements.txt.
+
+​Execução: Explore o notebook notebooks/simulacao_dashboard_sem_powerbi.ipynb para ver a simulação do dashboard.
+
+## ​8. 🔮 Próximos Passos
+
+​[ ] Implementar um modelo de Previsão de Vendas (Time Series) para o próximo trimestre.
+​[ ] Automatizar o pipeline de dados via GitHub Actions.
+​[ ] Desenvolver um bot no Telegram para envio de alertas de KPIs diários.
+
+
+
+
+---
 
 
 
